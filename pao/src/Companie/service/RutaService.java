@@ -1,13 +1,16 @@
 package Companie.service;
 
+import Companie.configuration.RepositoryConfiguration;
 import Companie.domain.entity.Angajat;
 import Companie.domain.entity.Ruta;
+import Companie.domain.repository.AngajatInterface;
 import Companie.domain.repository.AngajatRepository;
+import Companie.domain.repository.RutaInterface;
 import Companie.domain.repository.RutaRepository;
 
 public class RutaService {
-    RutaRepository ruta=new RutaRepository();
-    AngajatRepository angajat=new AngajatRepository();
+    RutaInterface ruta=RepositoryConfiguration.getInstance().getRutarepository();
+    AngajatInterface angajat= RepositoryConfiguration.getInstance().getAngajatrepository();
     public void programExcursii()
     {
         Ruta v[]=ruta.getRute();

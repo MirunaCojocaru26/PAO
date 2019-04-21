@@ -1,12 +1,13 @@
 package Companie.service;
 
+import Companie.configuration.RepositoryConfiguration;
 import Companie.domain.entity.Filiala;
 import Companie.domain.entity.GarajMasini;
 import Companie.domain.entity.SediuAngajati;
-import Companie.domain.repository.FilialaRepository;
+import Companie.domain.repository.FilialaInterface;
 
 public class FilialaService {
-    FilialaRepository filiala =new FilialaRepository();
+    FilialaInterface filiala = RepositoryConfiguration.getInstance().getFilialarepository();
     int sum=0;
     public void nrMasini()
     {

@@ -3,7 +3,7 @@ package Companie.domain.repository;
 import Companie.domain.entity.Adresa;
 import Companie.domain.entity.Ruta;
 
-public class RutaRepository {
+public class RutaRepository implements RutaInterface{
     private Adresa[] adrese=
             new Adresa[]{
                     new Adresa("Creatiei",32),

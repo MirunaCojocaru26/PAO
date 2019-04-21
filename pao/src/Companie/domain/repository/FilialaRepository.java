@@ -4,7 +4,7 @@ import Companie.domain.entity.Filiala;
 import Companie.domain.entity.GarajMasini;
 import Companie.domain.entity.SediuAngajati;
 
-public class FilialaRepository {
+public class FilialaRepository implements FilialaInterface {
     private Filiala[] filiale=
             new Filiala[]{
                     new SediuAngajati("Pallady",20,"Braila",23),

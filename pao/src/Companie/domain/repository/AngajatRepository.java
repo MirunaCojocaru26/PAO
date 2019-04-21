@@ -12,7 +12,7 @@ public class AngajatRepository implements AngajatInterface{
                     new Sofer("Andrei Hopa","Orhideelor",17,5732,"C",10),
                     new Sofer("Marius Neagu","Lalelelor",16,1818,"D",18),
                     new PersonalAuxiliar("Alexandru Siceva","Eroilor",5,3425,"Instalator"),
-                    new PersonalAuxiliar("Ion Idee","Tineretii",52,4352,"On de serviciu")
+                    new PersonalAuxiliar("Ion Idee","Tineretii",52,4352,"Om de serviciu")
             };
 
     public Angajat[] getAngajati()

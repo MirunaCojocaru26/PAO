@@ -1,12 +1,12 @@
 package Companie.service;
 
+import Companie.configuration.RepositoryConfiguration;
 import Companie.domain.entity.Angajat;
 import Companie.domain.entity.Sofer;
 import Companie.domain.repository.AngajatInterface;
-import Companie.domain.repository.AngajatRepository;
 
 public class AngajatService {
-    AngajatInterface angajat;
+    AngajatInterface angajat= RepositoryConfiguration.getInstance().getAngajatrepository();
     public void cautDupaNume(String nume)
     {
         Angajat v[]=angajat.getAngajati();
