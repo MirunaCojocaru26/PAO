@@ -1,3 +1,5 @@
+package Companie.domain.entity;
+
 public class PersonalAuxiliar extends Angajat
 {
     private String meserie;

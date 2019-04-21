@@ -1,3 +1,5 @@
+package Companie.domain.entity;
+
 public class SediuAngajati extends Filiala
 {
     private int nr_angajeti;

@@ -1,3 +1,5 @@
+package Companie.domain.entity;
+
 public class Adresa
 {
     private String strada;

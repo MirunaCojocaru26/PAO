@@ -1,3 +1,5 @@
+package Companie.domain.entity;
+
 public abstract class Filiala
 {
     private Oras oras;

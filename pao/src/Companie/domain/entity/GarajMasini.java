@@ -1,3 +1,5 @@
+package Companie.domain.entity;
+
 public class GarajMasini extends Filiala
 {
     private int nr_masini;

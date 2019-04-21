@@ -1,3 +1,5 @@
+package Companie.domain.entity;
+
 public class Masina
 {
     private String marca;

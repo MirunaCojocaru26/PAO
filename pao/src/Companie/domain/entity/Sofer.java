@@ -1,3 +1,5 @@
+package Companie.domain.entity;
+
 public class Sofer extends Angajat
 {
     private String categorie_permis;

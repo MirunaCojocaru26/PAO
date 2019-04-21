@@ -1,11 +1,13 @@
-public class Rute
+package Companie.domain.entity;
+
+public class Ruta
 {
     private Oras oras_start;
     private Oras oras_destinatie;
     private Masina masina;
     private int id_sofer;
 
-    public Rute(String strada1, int nr1, String nume1, String strada2, int nr2, String nume2, String marca, String model, int nr_locuri,int id_sofer)
+    public Ruta(String strada1, int nr1, String nume1, String strada2, int nr2, String nume2, String marca, String model, int nr_locuri,int id_sofer)
     {
         this.oras_start=new Oras(strada1,nr1,nume1);
         this.oras_destinatie=new Oras(strada2,nr2,nume2);

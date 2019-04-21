@@ -1,3 +1,7 @@
+package Companie.domain.entity;
+
+import Companie.domain.entity.Adresa;
+
 public class Oras
 {
     private String nume;
