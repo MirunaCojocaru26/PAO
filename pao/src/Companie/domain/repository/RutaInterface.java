@@ -1,7 +1,8 @@
 package Companie.domain.repository;
 
 import Companie.domain.entity.Ruta;
+import java.util.List;
 
 public interface RutaInterface {
-    public Ruta[] getRute();
+    public List<Ruta> getRute();
 }

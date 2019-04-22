@@ -4,12 +4,13 @@ import Companie.configuration.RepositoryConfiguration;
 import Companie.domain.entity.Angajat;
 import Companie.domain.entity.Sofer;
 import Companie.domain.repository.AngajatInterface;
+import java.util.List;
 
 public class AngajatService {
     AngajatInterface angajat= RepositoryConfiguration.getInstance().getAngajatrepository();
     public void cautDupaNume(String nume)
     {
-        Angajat v[]=angajat.getAngajati();
+        List<Angajat> v=angajat.getAngajati();
         int ok=0;
         for(int i=0;i<v.length;i++)
             if(v[i].getNume().indexOf(nume)>=0)
