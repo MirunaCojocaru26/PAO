@@ -1,15 +1,12 @@
 package Companie.domain.repository;
-
 import Companie.domain.entity.Filiala;
 import Companie.domain.entity.GarajMasini;
 import Companie.domain.entity.SediuAngajati;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.TreeSet;
 
 public class FilialaRepository implements FilialaInterface {
-    private List<Filiala> filiale= new ArrayList<>();
-    public List<Filiala> getFiliale()
+    private TreeSet<Filiala> filiale= new TreeSet<>();
+    public TreeSet<Filiala> getFiliale()
     {
         return filiale;
     }

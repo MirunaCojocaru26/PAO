@@ -1,22 +1,28 @@
 package Companie.service;
-
 import Companie.configuration.RepositoryConfiguration;
 import Companie.domain.entity.Filiala;
 import Companie.domain.entity.GarajMasini;
 import Companie.domain.entity.SediuAngajati;
 import Companie.domain.repository.FilialaInterface;
 
+import java.util.Iterator;
+import java.util.List;
+import java.util.TreeSet;
+
 public class FilialaService {
-    FilialaInterface filiala = RepositoryConfiguration.getInstance().getFilialarepository();
+    private FilialaInterface filiala = RepositoryConfiguration.getInstance().getFilialarepository();
     int sum=0;
     public void nrMasini()
     {
-        Filiala v[]=filiala.getFiliale();
-        for(int i=0;i<v.length;i++)
+        TreeSet<Filiala> v=filiala.getFiliale();
+        Iterator<Filiala> it = v.iterator();
+        Filiala i=null;
+        while(it.hasNext())
         {
-            if(v[i] instanceof GarajMasini)
+            i=it.next();
+            if(i instanceof GarajMasini)
             {
-                GarajMasini ref = (GarajMasini)v[i];
+                GarajMasini ref = (GarajMasini)i;
                 sum=sum+ref.getNr_masini();
             }
         }
@@ -24,19 +30,22 @@ public class FilialaService {
     }
     public void nrAngajatiSoferi()
     {
-        Filiala v[]=filiala.getFiliale();
+        TreeSet<Filiala> v=filiala.getFiliale();
+        Iterator<Filiala> it = v.iterator();
+        Filiala i=null;
         int sum=0, total=0;
-        for(int i=0;i<v.length;i++)
+        while (it.hasNext())
         {
-            if(v[i] instanceof GarajMasini)
+            i=it.next();
+            if(i instanceof GarajMasini)
             {
-                GarajMasini ref = (GarajMasini)v[i];
+                GarajMasini ref = (GarajMasini)i;
                 sum=sum+ref.getNr_soferi();
                 total=total+ref.getNr_soferi();
             }
             else
             {
-                SediuAngajati aux=(SediuAngajati) v[i];
+                SediuAngajati aux=(SediuAngajati) i;
                 total=total+aux.getNr_angajeti();
             }
         }
@@ -44,29 +53,37 @@ public class FilialaService {
     }
     public void cautOras(String oras)
     {
-        Filiala v[]=filiala.getFiliale();
+        TreeSet<Filiala> v=filiala.getFiliale();
+        Iterator<Filiala> it = v.iterator();
+        Filiala i=null;
         int ok=0;
-        for(int i=0;i<v.length;i++)
-            if(oras.equalsIgnoreCase(v[i].getOras().getNume()))
-            {
-                ok=1;
+        while(it.hasNext())
+        {
+            i=it.next();
+            if (oras.equalsIgnoreCase(i.getOras().getNume())) {
+                ok = 1;
                 System.out.println("Suntem fericiti sa va anuntam ca aven sediu in acest oras");
                 break;
             }
+        }
         if(ok==0)
             System.out.println("Ne pare rau, dar nu avem filiala in aces oras inca");
     }
     public void cautAdresa(String oras)
     {
         int ok=0;
-        Filiala v[]=filiala.getFiliale();
-        for(int i=0;i<v.length;i++)
-            if(oras.equalsIgnoreCase(v[i].getOras().getNume()))
-            {
-                ok=1;
-                System.out.println("Strada "+v[i].getOras().getAdresa().getStrada()+" numarul "+v[i].getOras().getAdresa().getNumar());
+        TreeSet<Filiala> v=filiala.getFiliale();
+        Iterator<Filiala> it = v.iterator();
+        Filiala i=null;
+        while ((it.hasNext()))
+        {
+            i=it.next();
+            if (oras.equalsIgnoreCase(i.getOras().getNume())) {
+                ok = 1;
+                System.out.println("Strada " + i.getOras().getAdresa().getStrada() + " numarul " + i.getOras().getAdresa().getNumar());
                 break;
             }
+        }
         if(ok==0)
             System.out.println("Ne pare rau, dar nu avem filiala in aces oras inca");
     }

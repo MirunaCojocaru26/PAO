@@ -30,8 +30,8 @@ public class AngajatRepositoryFile implements AngajatInterface{
         while(scanner2.hasNext())
         {
             String line=scanner2.nextLine();
-            String[] values=line.split(",");
-            v.add(new Sofer(values[0],values[1],Integer.parseInt(values[2]),Integer.parseInt(values[3]),values[4],Integer.parseInt(values[5])));
+            String[] value=line.split(",");
+            v.add(new Sofer(value[0],value[1],Integer.parseInt(value[2]),Integer.parseInt(value[3]),value[4],Integer.parseInt(value[5])));
         }
     }
 }

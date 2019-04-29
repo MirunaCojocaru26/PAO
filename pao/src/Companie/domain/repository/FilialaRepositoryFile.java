@@ -1,18 +1,15 @@
 package Companie.domain.repository;
-
 import Companie.domain.entity.Filiala;
 import Companie.domain.entity.GarajMasini;
 import Companie.domain.entity.SediuAngajati;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 public class FilialaRepositoryFile implements FilialaInterface {
-    List<Filiala> v=new ArrayList<>();
-    public List<Filiala> getFiliale()
+    TreeSet<Filiala> v=new TreeSet<>();
+    public TreeSet<Filiala> getFiliale()
     {
         return v;
     }
@@ -30,7 +27,7 @@ public class FilialaRepositoryFile implements FilialaInterface {
         Scanner scanner2=new Scanner(fis2);
         while (scanner2.hasNext())
         {
-            String line=scanner1.nextLine();
+            String line=scanner2.nextLine();
             String[] values=line.split(",");
             v.add(new SediuAngajati(values[0],Integer.parseInt(values[1]),values[2],Integer.parseInt(values[3])));
         }

@@ -1,6 +1,6 @@
 package Companie.domain.entity;
 
-public class GarajMasini extends Filiala
+public class GarajMasini extends Filiala implements Comparable
 {
     private int nr_masini;
     private int nr_soferi;
@@ -26,5 +26,10 @@ public class GarajMasini extends Filiala
     public void setNr_masini(int nr_masini)
     {
         this.nr_masini = nr_masini;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return nr_soferi;
     }
 }

@@ -1,6 +1,6 @@
 package Companie.domain.entity;
 
-public class SediuAngajati extends Filiala
+public class SediuAngajati extends Filiala implements Comparable
 {
     private int nr_angajeti;
 
@@ -16,5 +16,10 @@ public class SediuAngajati extends Filiala
     public void setNr_angajeti(int nr_angajeti)
     {
         this.nr_angajeti = nr_angajeti;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return nr_angajeti;
     }
 }

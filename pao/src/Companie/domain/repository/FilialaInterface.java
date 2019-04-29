@@ -1,8 +1,8 @@
 package Companie.domain.repository;
 
 import Companie.domain.entity.Filiala;
-import java.util.List;
+import java.util.TreeSet;
 
 public interface FilialaInterface {
-    public List<Filiala> getFiliale();
+    public TreeSet<Filiala> getFiliale();
 }
