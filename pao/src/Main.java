@@ -9,8 +9,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-//        RutaOutService x=null;
-//        x.functie();
         System.out.println("Welcome to the transport company " + "\n");
         AngajatService as=new AngajatService();
         FilialaService fs=new FilialaService();

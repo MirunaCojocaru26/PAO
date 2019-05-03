@@ -5,6 +5,8 @@ import Companie.domain.entity.Angajat;
 import Companie.domain.entity.Ruta;
 import Companie.domain.repository.AngajatInterface;
 import Companie.domain.repository.RutaInterface;
+import Companie.tool.Writer;
+
 import java.util.List;
 
 public class RutaService {
@@ -12,12 +14,14 @@ public class RutaService {
     AngajatInterface angajat= RepositoryConfiguration.getInstance().getAngajatrepository();
     public void programExcursii()
     {
+        Writer.getInstance().write("programExcursii, ");
         List<Ruta> v=ruta.getRute();
         for(int i=0;i<v.size();i++)
             System.out.println("Urmatoarea masina spre " +v.get(i).getOras_destinatie().getNume()+" pleaca din "+v.get(i).getOras_start().getNume());
     }
     public void listaMasini()
     {
+        Writer.getInstance().write("listaMasini, ");
         System.out.println("Marcile de masini de care dispunem:");
         List<Ruta> v=ruta.getRute();
         for(int i=0;i<v.size();i++)
@@ -25,6 +29,7 @@ public class RutaService {
     }
     public void soferTraseu()
     {
+        Writer.getInstance().write("soferTraseu, ");
         List<Angajat> v1=angajat.getAngajati();
         List<Ruta> v2 =ruta.getRute();
         for(int i=0;i<v1.size();i++)
@@ -34,6 +39,7 @@ public class RutaService {
     }
     public void cautLocuri(String oras)
     {
+        Writer.getInstance().write("cautLocuri, ");
         int ok=0;
         List<Ruta> v=ruta.getRute();
         for(int i=0;i<v.size();i++)
@@ -48,6 +54,7 @@ public class RutaService {
     }
     public void cautAdresaDestinatie(String oras)
     {
+        Writer.getInstance().write("cautAdresaDestinatie, ");
         int ok=0;
         List<Ruta> v=ruta.getRute();
         for(int i=0;i<v.size();i++)
