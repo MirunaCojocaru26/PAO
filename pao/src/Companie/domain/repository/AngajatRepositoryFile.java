@@ -1,5 +1,4 @@
 package Companie.domain.repository;
-
 import Companie.domain.entity.Angajat;
 import Companie.domain.entity.PersonalAuxiliar;
 import Companie.domain.entity.Sofer;

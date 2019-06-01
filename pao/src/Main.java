@@ -4,11 +4,14 @@ import Companie.service.AngajatService;
 import Companie.service.FilialaService;
 import Companie.service.RutaOutService;
 import Companie.service.RutaService;
+import Companie.tool.DataBase;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        DataBase ceva=new DataBase();
+        ceva.Hello();
         System.out.println("Welcome to the transport company " + "\n");
         AngajatService as=new AngajatService();
         FilialaService fs=new FilialaService();

@@ -4,11 +4,18 @@ import Companie.domain.entity.GarajMasini;
 import Companie.domain.entity.SediuAngajati;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.Comparator;
 import java.util.Scanner;
 import java.util.TreeSet;
 
 public class FilialaRepositoryFile implements FilialaInterface {
     TreeSet<Filiala> v=new TreeSet<>();
+//    TreeSet<Filiala> v=new TreeSet<>(new Comparator<Filiala>) {
+//        @Override
+//        public int compare(Filiala o1, Filiala o2) {
+//            return 0;
+//        }
+//    });
     public TreeSet<Filiala> getFiliale()
     {
         return v;
