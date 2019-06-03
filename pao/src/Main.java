@@ -1,9 +1,4 @@
-import Companie.configuration.RepositoryConfiguration;
-import Companie.domain.repository.FilialaInterface;
-import Companie.service.AngajatService;
-import Companie.service.FilialaService;
-import Companie.service.RutaOutService;
-import Companie.service.RutaService;
+import Companie.service.*;
 import Companie.tool.DataBase;
 
 import java.util.Scanner;
@@ -13,9 +8,9 @@ public class Main {
         DataBase ceva=new DataBase();
         ceva.Hello();
         System.out.println("Welcome to the transport company " + "\n");
-        AngajatService as=new AngajatService();
-        FilialaService fs=new FilialaService();
-        RutaService rs =new RutaService();
+        AngajatServiceSql as=new AngajatServiceSql();
+        FilialaServiceSql fs=new FilialaServiceSql();
+        RutaServiceSql rs =new RutaServiceSql();
         Scanner input = new Scanner(System.in);
         System.out.println("_________________________________________________________________________________________");
         System.out.println("1. Program excursii");
@@ -44,7 +39,7 @@ public class Main {
                     break;
                 }
                 case 3: {
-                    fs.nrMasini();;
+                    fs.nrMasini();
                     break;
                 }
                 case 4: {
@@ -60,7 +55,8 @@ public class Main {
                 }
                 case 7: {
                     System.out.println("Introduceti numele: ");
-                    String nume = input.next();
+                    input.nextLine();
+                    String nume = input.nextLine();
                     as.cautDupaNume(nume);
                     break;
                 }
@@ -85,7 +81,7 @@ public class Main {
                 case 11: {
                     System.out.println("Introduceti destinatia: ");
                     String oras = input.next();
-                    rs.cautAdresaDestinatie(oras);
+                    rs.cautaAdresaDestinatie(oras);
                     break;
                 }
                 default: {

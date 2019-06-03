@@ -50,7 +50,7 @@ public class RutaService {
                 break;
             }
         if(ok==0)
-            System.out.println("Acest oras nu se afla pe nici o ruta  companie noastre");
+            System.out.println("Acest oras nu se afla pe nici o ruta a companie noastre");
     }
     public void cautAdresaDestinatie(String oras)
     {

@@ -4,7 +4,6 @@ import Companie.configuration.RepositoryConfiguration;
 import Companie.domain.entity.Angajat;
 import Companie.domain.entity.Sofer;
 import Companie.domain.repository.AngajatInterface;
-import java.util.ArrayList;
 import java.util.List;
 
 public class AngajatService {
