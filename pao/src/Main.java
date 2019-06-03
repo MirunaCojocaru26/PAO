@@ -24,9 +24,10 @@ public class Main {
         System.out.println("9. Cauta adresa la care se afla sediul din orasul tau");
         System.out.println("10. Cate locuri sunt intr-o masina");
         System.out.println("11. Cauta urmatoarea masina spre destinatia ta");
+        System.out.println("12. Sunt erori in sistem? Sterge orasul care nu se mai afla pe traseele noastre");
         System.out.println("_________________________________________________________________________________________");
         int alegere = 1;
-        while (alegere > 0 && alegere < 12) {
+        while (alegere > 0 && alegere < 13) {
             System.out.println("Alegeti optiunea: ");
             alegere = input.nextInt();
             switch (alegere) {
@@ -82,6 +83,12 @@ public class Main {
                     System.out.println("Introduceti destinatia: ");
                     String oras = input.next();
                     rs.cautaAdresaDestinatie(oras);
+                    break;
+                }
+                case 12:{
+                    System.out.println("Introduceti orasul: ");
+                    String oras = input.next();
+                    rs.stergeRuta(oras);
                     break;
                 }
                 default: {
