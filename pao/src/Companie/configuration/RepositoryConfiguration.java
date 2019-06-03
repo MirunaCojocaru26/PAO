@@ -17,13 +17,9 @@ public class RepositoryConfiguration {
     {
         //System.out.println("Am ajuns si pe aici");
         try{
-            rutarepository=new RutaRepositoryFile("B:\\Git PAO\\pao\\rute.csv");
+            rutarepository=new RutaRepositorySql();
             angajatrepository= new AngajatRepositorySql();
-            filialarepository=new FilialaRepositoryFile("B:\\Git PAO\\pao\\adresaGaraje.csv","B:\\Git PAO\\pao\\adresaSedii.csv");
-        }
-        catch (FileNotFoundException E)
-        {
-            System.out.println("Fisier prost");
+            filialarepository=new FilialaRepositorySql();
         } catch (SQLException e) {
             e.printStackTrace();
         }
