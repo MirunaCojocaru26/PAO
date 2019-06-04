@@ -1,8 +1,11 @@
 package Companie.service;
+import Companie.tool.Writer;
+
 import java.sql.*;
 
 public class RutaServiceSql {
     public void programExcursii() {
+        Writer.getInstance().write("programExcursii, "+Thread.currentThread().getName()+", ");
         try (Connection c = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "Miruna", "parola");) {
             int ok = 0;
             PreparedStatement ps = c.prepareStatement("SELECT oras_plecare, oras_sosire FROM rute");
@@ -19,6 +22,7 @@ public class RutaServiceSql {
     }
 
     public void listaMasini() {
+        Writer.getInstance().write("listaMasini, "+Thread.currentThread().getName()+", ");
         System.out.println("Marcile de masini de care dispunem:");
         try (Connection c = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "Miruna", "parola");) {
             int ok = 0;
@@ -36,6 +40,7 @@ public class RutaServiceSql {
     }
 
     public void soferTraseu() {
+        Writer.getInstance().write("soferTraseu, "+Thread.currentThread().getName()+", ");
         try (Connection c = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "Miruna", "parola");) {
             int ok = 0;
             PreparedStatement ps = c.prepareStatement("SELECT r.oras_plecare, r.oras_sosire,s.nume FROM rute r,soferi s where s.id=r.id_sofer");
@@ -52,6 +57,7 @@ public class RutaServiceSql {
     }
 
     public void cautLocuri(String nume) {
+        Writer.getInstance().write("cautLocuri, "+Thread.currentThread().getName()+", ");
         try (Connection c = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "Miruna", "parola");) {
             int ok = 0;
             PreparedStatement ps = c.prepareStatement("SELECT nr_locuri FROM rute WHERE oras_plecare=? OR oras_sosire=?");
@@ -70,6 +76,7 @@ public class RutaServiceSql {
     }
 
     public void cautaAdresaDestinatie(String oras) {
+        Writer.getInstance().write("cautAdresaDestinatie, "+Thread.currentThread().getName()+", ");
         try (Connection c = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "Miruna", "parola");) {
             int ok = 0;
             PreparedStatement ps = c.prepareStatement("SELECT * FROM rute WHERE oras_plecare=? OR oras_sosire=?");
@@ -90,6 +97,7 @@ public class RutaServiceSql {
         }
     }
     public void stergeRuta(String oras) {
+        Writer.getInstance().write("stergeRuta, "+Thread.currentThread().getName()+", ");
         try (Connection c = DriverManager.getConnection("jdbc:h2:tcp://localhost/~/test", "Miruna", "parola");) {
             PreparedStatement ps=c.prepareStatement("DELETE FROM rute WHERE oras_plecare=? or oras_sosire=?;");
             ps.setString(1, oras);
